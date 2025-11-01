@@ -7,7 +7,7 @@ const urlsToCache = [
   `${BASE_URL}index.html`,
   `${BASE_URL}icons/icon-32x32.png`,
   `${BASE_URL}icons/icon-16x16.png`,
-  `${BASE_URL}icons/icon-144x14.png`,
+  `${BASE_URL}icons/icon-144x144.png`,
 ];
 const CACHE_NAME = "horse-racing-v1";
 const RUNTIME_CACHE = "horse-racing-runtime-v1";
