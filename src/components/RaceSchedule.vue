@@ -1,13 +1,23 @@
 <template>
   <div class="race-schedule-container">
-    <h2 class="section-title">📅 Race Schedule</h2>
+    <h2 class="section-title">
+      📅 Race Schedule
+    </h2>
 
-    <div v-if="!hasSchedule" class="empty-state">
+    <div
+      v-if="!hasSchedule"
+      class="empty-state"
+    >
       <p>No schedule generated yet.</p>
-      <p class="hint">Click "Generate Schedule" to begin!</p>
+      <p class="hint">
+        Click "Generate Schedule" to begin!
+      </p>
     </div>
 
-    <div v-else class="schedule-list">
+    <div
+      v-else
+      class="schedule-list"
+    >
       <div
         v-for="race in schedule"
         :key="race.roundNumber"
@@ -19,8 +29,12 @@
         }"
       >
         <div class="race-header">
-          <div class="race-round">Round {{ race.roundNumber }}</div>
-          <div class="race-distance">{{ race.distance }}m</div>
+          <div class="race-round">
+            Round {{ race.roundNumber }}
+          </div>
+          <div class="race-distance">
+            {{ race.distance }}m
+          </div>
           <div class="race-status">
             <span v-if="race.status === 'pending'">⏳</span>
             <span v-else-if="race.status === 'running'">🏃</span>
@@ -29,7 +43,9 @@
         </div>
 
         <div class="race-horses">
-          <div class="horses-label">Horses:</div>
+          <div class="horses-label">
+            Horses:
+          </div>
           <div class="horses-colors">
             <div
               v-for="horse in race.horses"
@@ -37,7 +53,7 @@
               class="horse-color-dot"
               :style="{ backgroundColor: horse.color }"
               :title="horse.name"
-            ></div>
+            />
           </div>
         </div>
       </div>

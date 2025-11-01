@@ -1,8 +1,13 @@
 <template>
-  <div id="app" class="app-container">
+  <div
+    id="app"
+    class="app-container"
+  >
     <header class="app-header">
       <h1>🐴 Horse Racing Game</h1>
-      <p class="subtitle">Experience the thrill of the race!</p>
+      <p class="subtitle">
+        Experience the thrill of the race!
+      </p>
     </header>
 
     <main class="app-main">

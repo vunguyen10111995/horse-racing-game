@@ -1,19 +1,27 @@
 <template>
   <div class="race-track-container">
-    <h2 class="section-title">🏇 Race Track</h2>
+    <h2 class="section-title">
+      🏇 Race Track
+    </h2>
 
-    <div v-if="!currentRace" class="empty-state">
+    <div
+      v-if="!currentRace"
+      class="empty-state"
+    >
       <p>No active race</p>
-      <p class="hint">Generate schedule and start racing!</p>
+      <p class="hint">
+        Generate schedule and start racing!
+      </p>
     </div>
 
-    <div v-else class="race-track">
+    <div
+      v-else
+      class="race-track"
+    >
       <div class="race-info">
         <div class="info-item">
           <span class="info-label">Round:</span>
-          <span class="info-value"
-            >{{ currentRace.roundNumber }} / {{ totalRounds }}</span
-          >
+          <span class="info-value">{{ currentRace.roundNumber }} / {{ totalRounds }}</span>
         </div>
         <div class="info-item">
           <span class="info-label">Distance:</span>
@@ -21,7 +29,10 @@
         </div>
         <div class="info-item">
           <span class="info-label">Status:</span>
-          <span class="info-value" :class="`status-${currentRace.status}`">
+          <span
+            class="info-value"
+            :class="`status-${currentRace.status}`"
+          >
             {{ currentRace.status.toUpperCase() }}
           </span>
         </div>
@@ -34,9 +45,11 @@
             :key="horse.id"
             class="lane"
           >
-            <div class="lane-number">{{ index + 1 }}</div>
+            <div class="lane-number">
+              {{ index + 1 }}
+            </div>
             <div class="lane-track">
-              <div class="finish-line"></div>
+              <div class="finish-line" />
               <div
                 class="horse-runner"
                 :style="{
@@ -48,7 +61,9 @@
               </div>
             </div>
             <div class="lane-info">
-              <div class="lane-horse-name">{{ horse.name }}</div>
+              <div class="lane-horse-name">
+                {{ horse.name }}
+              </div>
             </div>
           </div>
         </div>

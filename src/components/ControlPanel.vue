@@ -2,8 +2,8 @@
   <div class="control-panel">
     <button
       class="btn btn-generate"
-      @click="handleGenerate"
       :disabled="!canGenerate || isGenerating"
+      @click="handleGenerate"
     >
       <span v-if="isGenerating">Generating...</span>
       <span v-else>🎲 Generate Schedule</span>
@@ -11,34 +11,37 @@
 
     <button
       class="btn btn-start"
-      @click="handleStart"
       :disabled="!canStart || isRacing"
+      @click="handleStart"
     >
       <span v-if="isRacing">Racing...</span>
       <span v-else>🏁 Start Race</span>
     </button>
 
     <button
-      class="btn btn-pause"
-      @click="handlePause"
-      :disabled="!canPause"
       v-if="canPause"
+      class="btn btn-pause"
+      :disabled="!canPause"
+      @click="handlePause"
     >
       <span>⏸️ Pause</span>
     </button>
 
     <button
-      class="btn btn-resume"
-      @click="handleResume"
-      :disabled="!canResume"
       v-if="canResume"
+      class="btn btn-resume"
+      :disabled="!canResume"
+      @click="handleResume"
     >
       <span>▶️ Resume</span>
     </button>
 
     <div class="status-indicator">
       <span class="status-label">Status:</span>
-      <span class="status-value" :class="`status-${gameStatus}`">
+      <span
+        class="status-value"
+        :class="`status-${gameStatus}`"
+      >
         {{ getStatusText() }}
       </span>
     </div>

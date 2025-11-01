@@ -1,13 +1,23 @@
 <template>
   <div class="race-results-container">
-    <h2 class="section-title">🏆 Race Results</h2>
+    <h2 class="section-title">
+      🏆 Race Results
+    </h2>
 
-    <div v-if="allResults.length === 0" class="empty-state">
+    <div
+      v-if="allResults.length === 0"
+      class="empty-state"
+    >
       <p>No results yet</p>
-      <p class="hint">Results will appear as races complete!</p>
+      <p class="hint">
+        Results will appear as races complete!
+      </p>
     </div>
 
-    <div v-else class="results-list">
+    <div
+      v-else
+      class="results-list"
+    >
       <div
         v-for="result in allResults"
         :key="result.roundNumber"
@@ -33,10 +43,14 @@
             <div
               class="podium-horse-color"
               :style="{ backgroundColor: position.horseColor }"
-            ></div>
+            />
             <div class="podium-info">
-              <div class="podium-name">{{ position.horseName }}</div>
-              <div class="podium-time">{{ formatTime(position.time) }}s</div>
+              <div class="podium-name">
+                {{ position.horseName }}
+              </div>
+              <div class="podium-time">
+                {{ formatTime(position.time) }}s
+              </div>
             </div>
           </div>
         </div>
@@ -45,24 +59,34 @@
           <summary>View All Results</summary>
           <div class="results-table">
             <div class="table-header">
-              <div class="col-pos">Pos</div>
-              <div class="col-horse">Horse</div>
-              <div class="col-time">Time</div>
+              <div class="col-pos">
+                Pos
+              </div>
+              <div class="col-horse">
+                Horse
+              </div>
+              <div class="col-time">
+                Time
+              </div>
             </div>
             <div
               v-for="position in result.results"
               :key="position.horseId"
               class="table-row"
             >
-              <div class="col-pos">{{ position.position }}</div>
+              <div class="col-pos">
+                {{ position.position }}
+              </div>
               <div class="col-horse">
                 <div
                   class="horse-color-small"
                   :style="{ backgroundColor: position.horseColor }"
-                ></div>
+                />
                 {{ position.horseName }}
               </div>
-              <div class="col-time">{{ formatTime(position.time) }}s</div>
+              <div class="col-time">
+                {{ formatTime(position.time) }}s
+              </div>
             </div>
           </div>
         </details>

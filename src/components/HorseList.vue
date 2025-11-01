@@ -1,19 +1,31 @@
 <template>
   <div class="horse-list-container">
-    <h2 class="section-title">🐴 Available Horses ({{ horses.length }})</h2>
+    <h2 class="section-title">
+      🐴 Available Horses ({{ horses.length }})
+    </h2>
 
     <div class="horse-list">
-      <div v-for="horse in horses" :key="horse.id" class="horse-item">
+      <div
+        v-for="horse in horses"
+        :key="horse.id"
+        class="horse-item"
+      >
         <div
           class="horse-color"
           :style="{ backgroundColor: horse.color }"
-        ></div>
+        />
         <div class="horse-info">
-          <div class="horse-name">{{ horse.name }}</div>
-          <div class="horse-id">Horse #{{ horse.id }}</div>
+          <div class="horse-name">
+            {{ horse.name }}
+          </div>
+          <div class="horse-id">
+            Horse #{{ horse.id }}
+          </div>
         </div>
         <div class="horse-condition">
-          <div class="condition-label">Condition</div>
+          <div class="condition-label">
+            Condition
+          </div>
           <div class="condition-bar">
             <div
               class="condition-fill"
@@ -21,9 +33,11 @@
                 width: `${horse.condition}%`,
                 backgroundColor: getConditionColor(horse.condition),
               }"
-            ></div>
+            />
           </div>
-          <div class="condition-value">{{ horse.condition }}</div>
+          <div class="condition-value">
+            {{ horse.condition }}
+          </div>
         </div>
       </div>
     </div>
